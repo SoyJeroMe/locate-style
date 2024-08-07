@@ -1,22 +1,52 @@
-import React from 'react'
-import Navbar from '../../components/principals/Navbar'
-import learningVideo from '../../media/learning/VideoCategorias1.mp4'
-import {IoIosArrowDropdown} from 'react-icons/io'
-import courses from '../../data/courses'
-import Filtro from './Filtro'
+import React, { useState } from 'react';
+import Navbar from '../../components/principals/Navbar';
+import learningVideo from '../../media/learning/VideoCategorias1.mp4';
+import { IoIosArrowDropdown } from 'react-icons/io';
+import coursesData from '../../data/courses';
+import Filtro from './Filtro';
 
 function Learning() {
+  const [filteredCourses, setFilteredCourses] = useState(coursesData);
+
   const scrollToCourses = () => {
-    const coursesSection = document.getElementById('courses-section')
+    const coursesSection = document.getElementById('courses-section');
     if (coursesSection) {
-      const yOffset = 20 // Ajuste para mostrar solo el título y las primeras tarjetas
+      const yOffset = 20; // Ajuste para mostrar solo el título y las primeras tarjetas
       const y =
         coursesSection.getBoundingClientRect().top +
         window.pageYOffset +
-        yOffset
-      window.scrollTo({top: y, behavior: 'smooth'})
+        yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
-  }
+  };
+
+  const handleFilter = (category, price, rating, difficulty) => {
+    let filtered = coursesData;
+
+    if (category) {
+      filtered = filtered.filter(course => course.category === category);
+    }
+
+    if (price) {
+      if (price === 'low') {
+        filtered = filtered.filter(course => course.price <= 100);
+      } else if (price === 'medium') {
+        filtered = filtered.filter(course => course.price > 100 && course.price <= 200);
+      } else if (price === 'high') {
+        filtered = filtered.filter(course => course.price > 200);
+      }
+    }
+
+    if (rating) {
+      filtered = filtered.filter(course => course.rating >= parseInt(rating, 10));
+    }
+
+    if (difficulty) {
+      filtered = filtered.filter(course => course.difficulty === difficulty);
+    }
+
+    setFilteredCourses(filtered);
+  };
 
   return (
     <div>
@@ -52,8 +82,7 @@ function Learning() {
           </h1>
         </article>
         <div>
-          {/* filtro */}
-          <Filtro />
+          <Filtro onFilter={handleFilter} />
         </div>
         <div>
           <h3 className='font-bold text-3xl ml-28'>
@@ -61,7 +90,7 @@ function Learning() {
           </h3>
         </div>
         <section className="flex flex-wrap justify-center">
-          {courses.map((course) => (
+          {filteredCourses.map((course) => (
             <div
               key={course.id}
               className="max-w-xs m-4 bg-white rounded-lg shadow-lg"
@@ -74,13 +103,16 @@ function Learning() {
               <div className="p-4">
                 <h2 className="text-xl font-bold mb-2">{course.title}</h2>
                 <p className="text-gray-700">{course.description}</p>
+                <p className="text-gray-700 font-bold">${course.price}</p>
+                <p className="text-gray-700 font-bold">{course.rating} estrellas</p>
+                <p className="text-gray-700 font-bold">{course.difficulty}</p>
               </div>
             </div>
           ))}
         </section>
       </section>
     </div>
-  )
+  );
 }
 
-export default Learning
+export default Learning;

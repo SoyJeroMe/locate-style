@@ -17,7 +17,7 @@ function Navbar() {
           <img className='h-20' src={logoSL} alt="Logo" />
         </Link>
 
-        <nav className="hidden md:flex items-center justify-center flex-1">
+        <nav className="hidden md:flex items-center justify-center flex-1 ml-7">
           <ul className='flex list-none font-bold space-x-6'>
             <li className='hover:scale-110 transform transition-transform duration-200'>
               <Link to="/app-description">¿Cómo funciona?</Link>
@@ -26,13 +26,16 @@ function Navbar() {
               <Link to="/learning">Aprendizaje</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
-              <Link to="/contact">Contacto</Link>
+              <Link to="/shop">Tienda</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
               <Link to="/join-us">Únete</Link>
             </li>
             <li className='hover:scale-110 transform transition-transform duration-200'>
               <Link to="/info">Información</Link>
+            </li>
+            <li className='hover:scale-110 transform transition-transform duration-200'>
+              <Link to="/contact">Contacto</Link>
             </li>
           </ul>
         </nav>
@@ -65,9 +68,6 @@ function Navbar() {
         <nav className="md:hidden bg-white text-purple-800">
           <ul className='flex flex-col items-center list-none font-bold space-y-4 py-4'>
             <li>
-              <Link to="/contact" onClick={toggleMenu}>Contacto</Link>
-            </li>
-            <li>
               <Link to="/about" onClick={toggleMenu}>Nosotros</Link>
             </li>
             <li>
@@ -84,6 +84,9 @@ function Navbar() {
                   </span>
                 </button>
               </Link>
+            <li>
+              <Link to="/contact" onClick={toggleMenu}>Contacto</Link>
+            </li>
             </li>
             <li>
               <Link to={'/login'} onClick={toggleMenu}>

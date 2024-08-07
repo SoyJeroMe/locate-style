@@ -77,8 +77,8 @@ function Principal() {
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-black via-gray-700 to-purple-900 block text-6xl font-black">
                     Localiza Tu Estilo
                   </span>
-                  <span className='text-5xl bg-clip-text text-transparent bg-gradient-to-r from-black via-gray-700 to-purple-900 block'>
-                    En Cualquier Momento.
+                  <span className='text-3xl bg-clip-text text-transparent bg-gradient-to-r from-black via-gray-700 to-purple-900 block'>
+                    En Cualquier Lugar, En Cualquier Momento.
                   </span>
                 </h1>
                 <article>

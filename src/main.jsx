@@ -12,6 +12,7 @@ import Filtro from '../src/pages/learning/Filtro.jsx'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Learning from './pages/learning/Learning.jsx'
 import JoinUs from './pages/join-us/JoinUs.jsx'
+import Shop from './pages/shop/Shop.jsx'
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: 'filter',
     element: <Filtro />
+  },
+  {
+    path: 'shop',
+    element: <Shop />
   }
 ])
 
