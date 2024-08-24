@@ -49,6 +49,8 @@ function Learning() {
   };
 
   return (
+    <>
+    
     <div>
       <Navbar />
       <div>
@@ -61,7 +63,7 @@ function Learning() {
         >
           Your browser does not support the video tag.
         </video>
-        <p className="text-5xl font-black absolute text-center top-[530px] text-bold z-50 text-white">
+        <p className="text-5xl font-black absolute text-center top-[560px] text-bold z-50 text-white text-shadow">
           REFUERZA TUS HABILIDADES Y CONOCIMIENTOS CON LOS MEJORES CURSOS
           CREADOS POR NUESTRA PROPIA COMUNIDAD
           <div
@@ -112,6 +114,13 @@ function Learning() {
         </section>
       </section>
     </div>
+    
+    <style jsx>{`
+      .text-shadow {
+        text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000;
+      }
+    `}</style>
+    </>
   );
 }
 

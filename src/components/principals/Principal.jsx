@@ -74,10 +74,10 @@ function Principal() {
             <section className="bg-muted py-8 px-4 md:py-12 md:px-6 text-left">
               <div className="space-y-4">
                 <h1 className="font-black text-3xl md:text-6xl text-center">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-black via-gray-700 to-purple-900 block text-6xl font-black">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-purple-800 block text-6xl font-black">
                     Localiza Tu Estilo
                   </span>
-                  <span className='text-3xl bg-clip-text text-transparent bg-gradient-to-r from-black via-gray-700 to-purple-900 block'>
+                  <span className='text-3xl bg-clip-text text-transparent bg-gradient-to-r from-black to-purple-800 block'>
                     En Cualquier Lugar, En Cualquier Momento.
                   </span>
                 </h1>

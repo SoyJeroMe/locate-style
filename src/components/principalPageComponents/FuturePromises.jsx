@@ -33,7 +33,7 @@ function FuturePromises() {
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="w-full mx-auto">
           <div className="flex items-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800">Nuevos Talentos</h2>
+            <h2 className="text-3xl text-black font-black">Nuevos Talentos</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {stylists.map((stylist, index) => (

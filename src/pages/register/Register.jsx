@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../components/principals/Navbar';
 import currentUser from '../../img/options/currentUser.png'
 import stylist from '../../img/options/stylist.png'
+import maquillaje from '../../img/register/Maquillaje.jpg'
 
 const Card = ({ href, imgSrc, imgAlt, title, description }) => (
   <div className="relative overflow-hidden rounded-lg shadow-lg group hover:shadow-xl hover:-translate-y-2 transition-transform duration-300 ease-in-out">
@@ -12,7 +13,7 @@ const Card = ({ href, imgSrc, imgAlt, title, description }) => (
     <img
       src={imgSrc}
       alt={imgAlt}
-      width="600"
+      width="800px"
       height="400"
       className="object-cover w-full h-64"
       style={{ aspectRatio: '600 / 400', objectFit: 'cover' }}
@@ -27,12 +28,12 @@ const Card = ({ href, imgSrc, imgAlt, title, description }) => (
 const App = () => (
   <section>
     <Navbar />
-    <h1 className='m-auto text-center mt-16 font-extrabold text-2xl'>Que quieres ser?</h1>
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto py-12 px-4">
+    {/* <h1 className='m-auto text-center mt-16 font-extrabold text-2xl'>Que quieres ser?</h1> */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto py-12 px-4 justify-center items-center mt-24">
     <Link to={'/register-stylist'}>
     <Card 
       href="#" 
-      imgSrc={stylist} 
+      imgSrc={maquillaje} 
       imgAlt="Estilista/Barbero" 
       title="Estilista/Barbero" 
       description="Accede a servicios de peluquería y barbería."
